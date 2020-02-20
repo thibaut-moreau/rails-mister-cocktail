@@ -1,0 +1,11 @@
+<h1>Welcome to the cocktail manager</h1>
+<h2>Your cocktail : <%= @cocktail.name %> </h2>
+<p>Doses : </p>
+<% @cocktail.doses.each do |dose| %>
+  <%= dose.description %>
+<% end %>
+
+<%= simple_form_for [@cocktail, @doses] do |f| %>
+  <%= f.input :description, label: "Ingredients" %>
+  <%= f.submit "add a dose", class: "btn btn-primary" %>
+<% end %>

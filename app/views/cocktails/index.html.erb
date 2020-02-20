@@ -1,0 +1,14 @@
+<h1>Welcome to the cocktail bar</h1>
+
+<h2>Here is the list of cocktails available</h2>
+
+<div>
+  <% @cocktails.each do |cocktail| %>
+    <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+    <p>
+    <%= link_to "Delete", cocktails_path(cocktail),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+    </p>
+  <% end %>
+</div>
