@@ -3,5 +3,7 @@ class Dose < ApplicationRecord
   belongs_to :ingredient
 
   validates :description, presence: true
-  validates :cocktail, uniqueness: { scope: :ingredient }
+  validates :cocktail, presence: true
+  validates :ingredient, presence: true
+  validates_uniqueness_of :cocktail, scope: [:ingredient]
 end

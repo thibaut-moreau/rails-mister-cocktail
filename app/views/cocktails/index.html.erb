@@ -1,14 +1,21 @@
-<h1>Welcome to the cocktail bar</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/originals/a5/42/36/a542363f964684db425d3c480165e5f6.jpg);">
+  <div class="container">
+    <h1>Welcome to Cockolito</h1>
+    <p>This amazing website is your own cookbook especially for cocktails !</p>
+    <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-ghost" %>
+  </div>
+</div>
 
-<h2>Here is the list of cocktails available</h2>
-
-<div>
+<div class="cards">
   <% @cocktails.each do |cocktail| %>
-    <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-    <p>
-    <%= link_to "Delete", cocktails_path(cocktail),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
-    </p>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <h2><%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-ghost" %></h2>
+      <p>
+      <%= link_to "Delete", cocktail_path(cocktail),
+          method: :delete,
+          data: { confirm: "Are you sure?" },
+          class: "btn btn-ghost" %>
+      </p>
+    </div>
   <% end %>
 </div>
