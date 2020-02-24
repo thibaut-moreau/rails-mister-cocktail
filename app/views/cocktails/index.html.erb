@@ -8,14 +8,15 @@
 
 <div class="cards">
   <% @cocktails.each do |cocktail| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      <h2><%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-ghost" %></h2>
-      <p>
-      <%= link_to "Delete", cocktail_path(cocktail),
-          method: :delete,
-          data: { confirm: "Are you sure?" },
-          class: "btn btn-ghost" %>
-      </p>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.intermarche.be/sites/default/files/styles/recipe_850/public/recipe/27491//2018_s48_cocktail-blue-gin-tonic.jpg?itok=bw_8jyNt)">
+      <tbody>
+        <tr id="btn btn-cocktail"><%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-ghost" %></tr>
+        <tr id="btn btn-delete"><%= link_to "Delete", cocktail_path(cocktail),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: "btn btn-ghost" %>
+        </tr>
+      </tbody>
     </div>
   <% end %>
 </div>

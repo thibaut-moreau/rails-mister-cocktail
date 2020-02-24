@@ -49,6 +49,11 @@
   font-weight: normal;
 }
 
+#btn btn-delete {
+  text-align: center;
+  color: red;
+}
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -68,6 +73,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  padding: 20px;
 }
 
 // Smallest device

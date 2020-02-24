@@ -29,5 +29,5 @@
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description, label: "Dose" %>
   <%= f.association :ingredient, label: "Ingredients"%>
-  <%= f.submit "add a dose", class: "btn btn-primary" %>
+  <%= f.submit "add an ingredient", class: "btn btn-primary" %>
 <% end %>
